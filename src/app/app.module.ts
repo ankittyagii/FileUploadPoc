@@ -1,21 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClient,HttpClientModule} from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UploadComponent } from './upload/upload.component';
+import { UploadDownloadService } from './services/upload-download.service';
+import { HttpClientModule } from '@angular/common/http';
+import { UploadComponent } from './components/upload/upload.component';
+import { DownloadComponent } from './components/download/download.component';
+import { FileManagerComponent } from './components/file-manager/file-manager.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UploadComponent
+    FileManagerComponent,
+    UploadComponent,
+    DownloadComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ UploadDownloadService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
